@@ -91,10 +91,12 @@ cd "$s" || {
 
 
 echo "Cleaning  up old mods (if any)"
-rm -rf BepInEx
+#rm -rf BepInEx
 rm -rf dotnet
 rm -f doorstop_config.ini
 rm -f winhttp.dll
+
+chown -R vrising:vrising BepInEx/*
 
 if [ "${ENABLE_MODS}" = 1 ]; then
     echo "Setting up mods"
